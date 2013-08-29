@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <title>Slides</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="libraries/frameworks/bootstrap3/assets/ico/slidify_logo.png">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="libraries/frameworks/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <!-- Syntax Highlighter CSS -->
+    <link href="libraries/highlighters/prettify/css/twitter-bootstrap.css" rel="stylesheet">
+    
+    <!-- Extra CSS: Fonts -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+    
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap3/assets/js/html5shiv.js"></script>
+      <script src="bootstrap3/assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+        
+         
+    <!-- Custom styles for this template -->
+    <link href="libraries/frameworks/bootstrap3/assets/css/jumbotron.css" rel="stylesheet">
+
+    
+
+    <style>
+    #features p {
+      font-family: "Open Sans", sans-serif;
+      text-align: justify;
+      line-height: 1.6em;
+    }
+    #features p {
+      font-size: 16px;
+    }
+    #features h2, .jumbotron h2 {
+      font-family: "Open Sans Condensed";
+    }
+    .jumbotron h1 {
+      font-size: 64px;
+      font-family: "Open Sans Condensed";
+      color: #002b36;
+    }
+    .jumbotron {
+      background-color: #fdf6e3;
+    }
+    body {
+      /* color: #93a1a1; */
+      color: #002b36;
+    }
+    .navbar-inverse {
+      background-color: #002b36;
+    }
+    </style>
+    
+  </head>
+
+  
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Slidify</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li class="">
+            <a href="index.html" >
+              <i class="icon-home"> </i>
+              Home 
+            </a>
+        </li>
+          <li class="active">
+            <a href="start.html" >
+              <i class="icon-signin"> </i>
+              Start 
+            </a>
+        </li>
+          <li class="">
+            <a href="about" >
+              <i class="icon-pencil"> </i>
+              Author 
+            </a>
+        </li>
+          <li class="dropdown">
+            <a href="style" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-hand-right"> </i>
+              Style <b class="caret"></b>
+            </a>
+          <ul class="dropdown-menu">
+            <li><a href="samples/intro">
+               <i class="icon-hand-right"> </i> io2012
+             </a></li>
+            <li><a href="samples/deck.js">
+               <i class="icon-hand-right"> </i> deck.js
+             </a></li>
+            <li><a href="samples/shower">
+               <i class="icon-hand-right"> </i> shower
+             </a></li>
+            <li><a href="samples/landslide">
+               <i class="icon-hand-right"> </i> landslide
+             </a></li>
+          </ul>
+        </li>
+          <li class="">
+            <a href="customize" >
+              <i class="icon-gift"> </i>
+              Customize 
+            </a>
+        </li>
+          <li class="">
+            <a href="extend" >
+              <i class="icon-cogs"> </i>
+              Extend 
+            </a>
+        </li>
+          <li class="">
+            <a href="publish" >
+              <i class="icon-github"> </i>
+              Publish 
+            </a>
+        </li>
+      </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container " id='features'>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Sidebar</h2>
+
+    </div>
+    <div class="col-md-7">
+      <h2>Slides</h2>
+
+<p>Slides are authored in markdown and delimited by an empty newline followed by three dashes. Shown below is an example of a typical slide</p>
+
+<pre><code>---
+## Slide Title
+
+This is a typical slide. You can use __markdown__ to write content.
+
+Some points to make
+
+- Point 1
+- Point 2
+- Point 3
+</code></pre>
+
+<h4>Slide Properties</h4>
+
+<p>Many a time, you want to style some slides differently. One way to achieve this is using slide properties, which can be added inline after the slide delimiter. For example, if you want to add an id to a slide and also slide classes, which you can then style using <code>css</code>, here is how you can do it.</p>
+
+<pre><code>--- {id: myslide, class: [bigger, red]}
+## Slide Title
+
+This is a typical slide. You can use __markdown__ to write content.
+
+Some points to make
+
+- Point 1
+- Point 2
+- Point 3   
+</code></pre>
+
+<p>The slide properties need to be valid YAML, and you can check if it is the case by running the following in your R console</p>
+
+<pre><code>props &lt;- &quot;{id: myslide, class: [bigger, red]}&quot;
+yaml::yaml.load(props)
+</code></pre>
+
+<p>Slidify also allows an alternate format for specifying slide properties, that uses space separated key-value pairs with symbolic shortcuts. So, the above set of properties can also be written as</p>
+
+<pre><code>--- #myslide .bigger .red
+</code></pre>
+
+<p>The symbolic shortcuts currently available include</p>
+
+<pre><code># id
+. class
+&amp; template
+= name
+</code></pre>
+
+<p>NOTE: Do not mix the two formats of specifying properties, as it won&#39;t work. For example, the following slide properties will throw an error</p>
+
+<pre><code>--- {#myslide, class: [bigger, red]}
+</code></pre>
+
+<p>We can then add <code>css</code> externally or inline that would style this slide as required</p>
+
+<pre><code>slide.bigger {
+  font-size: 1.5em;
+}
+
+slide.red {
+  color: red;
+}
+</code></pre>
+
+<h4>Customizing Fonts</h4>
+
+<p>It is easy to use custom fonts with Slidify. For example, suppose you wish to use the <code>Droid Sans</code> webfont from Google. You can accomplish your task in two steps.</p>
+
+<p>First, you need to include a link to the font in the YAML front matter at the top of your Rmd document.</p>
+
+<pre><code>---
+assets:
+  css: http://fonts.googleapis.com/css?family=Droid+Sans
+---
+</code></pre>
+
+<p>Second, you need to add CSS that would apply this font to the text. You can either include the CSS inline, or add it to an external css file, and link it in the YAML front matter.</p>
+
+<pre><code>p {
+  font-family: &quot;Droid Sans&quot; !important
+}
+</code></pre>
+
+<p>Note that we are adding the <code>!important</code> tag to the CSS declaration so that it overrules all other rules that have been defined for <code>p</code> tags. If you are working with a specific Slidify framework, you can also achieve this by writing targetted CSS directives. For example, if you are using the default framework <code>io2012</code>, you can target the text elements on the slide as</p>
+
+<pre><code>slide &gt; article p, ul, ol {
+  font-family: &quot;Droid Sans&quot;
+}
+</code></pre>
+
+<p>This CSS rule targets <code>p/ul/ol</code> text elements nested inside an <code>article</code> tag which in turn is a direct descendant of a <code>slide</code> tag. Knowing the hierarcy helps you write efficient CSS.</p>
+
+<p>Note that using webfonts ensures that they are available wherever the document is displayed online. However, to ensure offline availability as well, you need to download the fonts and use an <code>@font-face</code> kit to use them. </p>
+
+<!-- Add Links on Font Face Kits --> 
+
+    </div>
+  </div>
+</div>
+
+    
+  </body>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="libraries/frameworks/bootstrap3/assets/js/jquery.js"></script>
+    <script src="libraries/frameworks/bootstrap3/dist/js/bootstrap.min.js"></script>
+    <script src="libraries/frameworks/bootstrap3/assets/js/holder.js"></script>
+    <script>
+      $('a').popover();
+    </script>
+    <!-- Load Javascripts for Widgets -->
+
+    
+
+    <!-- Google Prettify -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+    <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+    <script>
+      var pres = document.getElementsByTagName("pre");
+      for (var i=0; i < pres.length; ++i) {
+        pres[i].className = "prettyprint ";
+      }
+      prettyPrint();
+    </script>
+    <!-- End Google Prettify --> 
+    </html>
