@@ -1,0 +1,8 @@
+navbar:
+  - {item: Create, href: "#about", class: active, icon: "edit"}
+  - {item: Customize, href: "#contact", icon: "hand-right"}
+  - {item: Frameworks, href: "#frameworks", dropdown: true, class: dropdown, 
+     menu: [{item: io2012}, {item: shower}]
+    }
+title: Slidify
+favicon: slidify_logo

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+     
+    <!-- Custom styles for this template -->
+    <link href="{{page.url.framework}}/assets/css/jumbotron.css" rel="stylesheet">
+
+    {{{ page.assets.css }}}
+
+    <style>
+    #features p {
+      font-family: "Open Sans", sans-serif;
+      text-align: justify;
+      line-height: 1.6em;
+    }
+    #features p {
+      font-size: 16px;
+    }
+    #features h2, .jumbotron h2 {
+      font-family: "Open Sans Condensed";
+    }
+    .jumbotron h1 {
+      font-size: 64px;
+      font-family: "Open Sans Condensed";
+      color: #002b36;
+    }
+    .jumbotron {
+      background-color: #fdf6e3;
+    }
+    body {
+      /* color: #93a1a1; */
+      color: #002b36;
+    }
+    .navbar-inverse {
+      background-color: #002b36;
+    }
+    </style>
+    
+  </head>
+
+  {{{ page.assets.jshead }}}
+
+  <body>
+
+    {{> navbar }}
+
+
+    {{{ page.content }}}
+
+    
+  </body>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{page.url.framework}}/assets/js/jquery.js"></script>
+    <script src="{{page.url.framework}}/dist/js/bootstrap.min.js"></script>
+    <script src="{{page.url.framework}}/assets/js/holder.js"></script>
+    <script>
+      $('a').popover();
+    </script>
+    <!-- Load Javascripts for Widgets -->
+
+    {{{ page.assets.js }}}
+
+    {{> javascripts }}
+
+</html>

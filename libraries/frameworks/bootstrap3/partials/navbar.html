@@ -1,0 +1,34 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{ site.title }}</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        {{# site.navbar }}
+          <li class="{{ class }}">
+            <a href="{{ href }}" {{# dropdown }}class="dropdown-toggle" data-toggle="dropdown"{{/ dropdown }}>
+              {{# icon }}<i class="icon-{{.}}"> </i>{{/ icon}}
+              {{ item }} {{# dropdown }}<b class="caret"></b>{{/ dropdown }}
+            </a>
+          {{# dropdown }}
+          <ul class="dropdown-menu">
+            {{#menu}}
+            <li><a href="{{href}}">
+               {{# icon }}<i class="icon-{{.}}"> </i>{{/ icon}} {{{ item }}}
+             </a></li>
+            {{/menu}}
+          </ul>
+          {{/ dropdown }}
+        </li>
+        {{/ site.navbar }}
+      </ul>
+    </div>
+  </div>
+</div>
+
