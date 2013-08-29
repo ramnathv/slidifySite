@@ -4,5 +4,8 @@ navbar:
   - {item: Frameworks, href: "#frameworks", dropdown: true, class: dropdown, 
      menu: [{item: io2012}, {item: shower}]
     }
+  - {item: Lessons, href: "#lessons", dropdown: true, class: dropdown, 
+     menu: [{item: Lesson1, href: "lesson1.html"}, {item: Lesson2}]
+    }
 title: Slidify
 favicon: slidify_logo
