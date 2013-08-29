@@ -46,7 +46,7 @@ ol.linenums {
 </div>
 
 
-### Install Slidify
+### Install
 
 Slidify is not on CRAN as yet and needs to be installed from `github`. You can use Hadley's `devtools` package to accomplish this easily. You will also need `slidifyLibraries` which contains all external libraries required by Slidify.
 
@@ -64,11 +64,9 @@ This step will create a new directory `mydeck` and add the necessary scaffolding
 author("mydeck")
 ```
 
-### Edit
-
 Edit the YAML front matter (if you don't know what it is, just replace everything to the right of the `:` in the lines between the `---` right at the top). Edit the deck, making sure to separate your slides by a blank line followed by three dashes `---`. 
 
-### Generate
+### Slidify
 
 This step generates a html slide deck from `index.Rmd`. It is a static file, which means that you can open it in your browser locally and it should display fine.
 
