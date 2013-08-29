@@ -10,7 +10,9 @@ prettify:
 
 *** .col-md-3
 
-## Interactive Docs
+## Watch
+
+<iframe width="250" height="200" src="http://www.youtube.com/embed/I95GOmLc7TA" frameborder="0" allowfullscreen></iframe>
 
 <a class='btn btn-primary' href="#">
  <i class='icon-download icon-large'> </i> Download
