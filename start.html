@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    <title>Slidify</title>
+    <title>Tutorials</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -13,7 +13,7 @@
     <link href="libraries/frameworks/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
     
     <!-- Syntax Highlighter CSS -->
-    <link href="libraries/highlighters/highlight.js/css/solarized_light.css" rel="stylesheet">
+    <link href="libraries/highlighters/prettify/css/twitter-bootstrap.css" rel="stylesheet">
     
     <!-- Extra CSS: Fonts -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
@@ -142,65 +142,75 @@
       </div>
     </div>
     
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <style>
-.jumbotron pre {
-  border: 1px;
-  background-color: transparent;
-  font-size: 18px;
-  margin-left: -20px;
+    <div class="container " id='features'>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Interactive Docs</h2>
+
+<p><a class='btn btn-primary' href="#">
+ <i class='icon-download icon-large'> </i> Download
+</a></p>
+
+    </div>
+    <div class="col-md-7">
+      <h2>Getting Started</h2>
+
+<style>
+body {
+  margin-top: 40px;
+}
+ol.linenums {
+  margin-left: 0px;
+}
+#features p {
+  font-size: 14px;
+  line-height: 21px;
+  color: #777777;
+}
+#features h3 {
+  font-family: "Open Sans Condensed";
+  color: #555555;
 }
 </style>
 
-<iframe width="500" height="340" src="http://www.youtube.com/embed/I95GOmLc7TA" frameborder="0" allowfullscreen></iframe>
+<div class='alert alert-success'>
+ You can install Slidify, write a three page slide deck and publish it to Github,  all in less than 5 minutes!
+</div>
 
-      </div>
-      <div class="col-md-6">
-        <h1>Slidify</h1>
+<h3>Install Slidify</h3>
 
-<p>Interactive Documents from Markdown</p>
+<p>Slidify is not on CRAN as yet and needs to be installed from <code>github</code>. You can use Hadley&#39;s <code>devtools</code> package to accomplish this easily. You will also need <code>slidifyLibraries</code> which contains all external libraries required by Slidify.</p>
 
-<p><a class='btn btn-success btn-lg' href="#">Learn More</a></p>
-
-<pre><code class="r">devtools::source_gist(&quot;c5bc8ea8e250a6bd039d&quot;)
-library(slidify)
-author(&quot;newdeck&quot;)
-slidify(&quot;index.Rmd&quot;)
-publish(repo = &quot;newdeck&quot;, user = &quot;ramnathv&quot;)
+<pre><code>library(devtools)
+install_github(&#39;slidify&#39;, &#39;ramnathv&#39;)
+install_github(&#39;slidifyLibraries&#39;, &#39;ramnathv&#39;)
 </code></pre>
 
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container " id='features'>
-  <div class="row">
-    <div class="col-md-4">
-      <h2><i class="icon-pencil"> </i>Create</h2>
+<h3>Author</h3>
 
-<p>Write content in <code>R Markdown</code>, mixing <code>markdown</code> text with <code>knitr</code> code chunks, and render it as an interactive web-ready HTML5 document.</p>
+<p>This step will create a new directory <code>mydeck</code> and add the necessary scaffolding. If you have <code>git</code> installed, it will initialize it as a <code>git</code> repo, checkout its <code>gh-pages</code> branch, add and commit everything. Finally, it will open <code>index.Rmd</code> for you to edit.</p>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<pre><code>author(&quot;mydeck&quot;)
+</code></pre>
 
-    </div>
-    <div class="col-md-4">
-      <h2><i class="icon-hand-right"> </i>Customize</h2>
+<h3>Edit</h3>
 
-<p>Style your document using <code>frameworks</code>. Structure display using <code>layouts</code>. Extend functionality using <code>widgets</code></p>
+<p>Edit the YAML front matter (if you don&#39;t know what it is, just replace everything to the right of the <code>:</code> in the lines between the <code>---</code> right at the top). Edit the deck, making sure to separate your slides by a blank line followed by three dashes <code>---</code>. </p>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<h3>Generate</h3>
 
-    </div>
-    <div class="col-md-4">
-      <h2><i class="icon-gift"> </i>Share</h2>
+<p>This step generates a html slide deck from <code>index.Rmd</code>. It is a static file, which means that you can open it in your browser locally and it should display fine.</p>
 
-<p>Publish your interactive document to <code>RPubs</code> with a single click, or to <code>github</code> and <code>dropbox</code> with a few lines of code.</p>
+<pre><code>slidify(&quot;index.Rmd&quot;)
+</code></pre>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<h3>Publish</h3>
+
+<p>Now is the magical step of publishing your deck to <code>github</code>. Login with your github account and <a href="https://help.github.com/articles/creating-a-new-repository">create a new repository</a>. Note that Github will prompt you to add a README file, but just use the defaults so that your repo is empty. You will need to have <code>git</code> installed on your computer and be able to push to <code>github</code> using <a href="https://help.github.com/articles/generating-ssh-keys">SSH</a></p>
+
+<pre><code># replace USER and REPO with your username and reponame
+publish(user = &quot;USER&quot;, repo = &quot;REPO&quot;, host = &#39;github&#39;)
+</code></pre>
 
     </div>
   </div>
@@ -220,9 +230,15 @@ publish(repo = &quot;newdeck&quot;, user = &quot;ramnathv&quot;)
 
     
 
-    <!-- LOAD HIGHLIGHTER JS FILES -->
-    <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <!-- DONE LOADING HIGHLIGHTER JS FILES -->
-     
+    <!-- Google Prettify -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+    <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+    <script>
+      var pres = document.getElementsByTagName("pre");
+      for (var i=0; i < pres.length; ++i) {
+        pres[i].className = "prettyprint ";
+      }
+      prettyPrint();
+    </script>
+    <!-- End Google Prettify --> 
     </html>
