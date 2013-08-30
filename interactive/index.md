@@ -16,7 +16,7 @@ assets:
 
 *** .col-md-12
 
-# Interactive Documents with R
+# Interactive Documents
 
 .lead I gave a talk recently at the [NY Open Statistical Programming Meetup](http://www.meetup.com/nyhackr/events/122192822/), on how to use R to generate documents which are dynamic and interactive. You can watch the screencast, view the [resulting document](http://glimmer.rstudio.com/ramnathv/idocsapp/) or read along for more information.
 
