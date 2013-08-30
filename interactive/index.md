@@ -12,6 +12,14 @@ assets:
   css: 
     - "http://fonts.googleapis.com/css?family=Open+Sans"
     - "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700"
+--- &jumbotron
+
+*** .col-md-12
+
+# Interactive Documents with R
+
+.lead I gave a talk recently at the [NY Open Statistical Programming Meetup](http://www.meetup.com/nyhackr/events/122192822/), on how to use R to generate documents which are dynamic and interactive. You can watch the screencast, view the [resulting document](http://glimmer.rstudio.com/ramnathv/idocsapp/) or read along for more information.
+
 --- &brow #features
 
 *** .col-md-3
@@ -22,9 +30,6 @@ assets:
 <iframe width="250" height="200" src="http://www.youtube.com/embed/znaO6OHLTeY" frameborder="0" allowfullscreen></iframe><br/>
 
 <style>
-body {
-  margin-top: 40px;
-}
 ol.linenums {
   margin-left: 0px;
 }
@@ -42,12 +47,6 @@ ol.linenums {
 *** .col-md-7
 
 
-
-
-# Interactive Documents with R
-
-
-I gave a talk recently at the [NY Open Statistical Programming Meetup](http://www.meetup.com/nyhackr/events/122192822/), on how to use R to generate documents which are dynamic and interactive. I thought it would be useful to capture the main idea of the talk with a short demo. You can either watch the screencast, view the [resulting document](http://glimmer.rstudio.com/ramnathv/idocsapp/) or read along for more information.
 
 
 ## Getting Started
