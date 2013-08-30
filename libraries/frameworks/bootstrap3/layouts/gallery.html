@@ -1,0 +1,11 @@
+<div class="container {{ slide.class }}" id='{{ slide.id }}'>
+  <div class="row">
+    {{# slide.blocks }}
+    <div class="{{ class }}">
+      <div class="thumbnail">
+         {{{ html }}}
+      </div>
+    </div>
+     {{/ slide.blocks }}  
+  </div>
+</div>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    <title>Start</title>
+    <title>Widgets</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -135,9 +135,20 @@
         
       </div>
       <div class="col-md-8">
-        <h1>Slidify</h1>
+        <h1>Widgets</h1>
 
-<p class='lead'>Slidify is an R package that helps create, customize and share, elegant, dynamic and interactive HTML5 documents using R Markdown.</p>
+<p class='lead'>A <code>widget</code> is a collection of <code>stylesheets</code>, <code>javascripts</code> and <code>layouts</code> that add additional functionality to an HTML5 document.</p>
+
+<!--
+
+<style>
+pre {
+  padding: 0px;
+  border: none;
+}
+</style>
+
+-->
 
       </div>
     </div>
@@ -146,72 +157,74 @@
 <div class="container " id='features'>
   <div class="row">
     <div class="col-md-3">
-      <h2>Watch</h2>
-
-<iframe width="250" height="200" src="http://www.youtube.com/embed/I95GOmLc7TA" frameborder="0" allowfullscreen></iframe>
-
-<p><a class='btn btn-primary' href="#">
- <i class='icon-download icon-large'> </i> Download
-</a></p>
+      <h2>Sidebar</h2>
 
     </div>
     <div class="col-md-7">
-      <h2>Getting Started</h2>
+      <p>Let us take the example of <code>mathjax</code>, a widget that comes pre-bundled with <code>slidify</code>, that allows mathematical equations written in <code>latex</code> to be rendered beautifully. The <code>mathjax</code> widget has the following folder structure</p>
 
-<style>
-body {
-  /* margin-top: 40px; */
-}
-ol.linenums {
-  margin-left: 0px;
-}
-#features p {
-  font-size: 14px;
-  line-height: 21px;
-  color: #777777;
-}
-#features h3 {
-  font-family: "Open Sans Condensed";
-  color: #555555;
-}
-</style>
+<p><img src="http://i.imgur.com/y4Yep.png?1" alt="mathjax"></p>
 
-<div class='alert alert-success'>
-<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
- You can install Slidify, write a three page slide deck and publish it to Github,  all in less than 5 minutes!
-</div>
+<p><code>mathjax.html</code> is a mustache layout that specifies how this widget would be inserted into a slide deck. Note that it serves <code>mathjax</code> from a CDN when you are connected to the internet, and if not, it switches to a stripped down local version. The mustache variable <code>page.url.widgets</code>, specifies the path to the location of the widgets folder in the root directory, so that it is served correctly.</p>
 
-<h3>Install</h3>
-
-<p>Slidify is not on CRAN as yet and needs to be installed from <code>github</code>. You can use Hadley&#39;s <code>devtools</code> package to accomplish this easily. You will also need <code>slidifyLibraries</code> which contains all external libraries required by Slidify. We will work with the <code>dev</code> branch of the libraries which contains all the latest magic.</p>
-
-<pre><code>library(devtools)
-install_github(&#39;slidify&#39;, &#39;ramnathv&#39;, ref = &quot;dev&quot;)
-install_github(&#39;slidifyLibraries&#39;, &#39;ramnathv&#39;, ref = &quot;dev&quot;)
+<pre><code class="html">&lt;!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves &gt;100MB) --&gt;
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],
+      processEscapes: true
+    }
+  });
+&lt;/script&gt;
+&lt;script src=&quot;https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+&lt;script&gt;
+  window.MathJax || document.write(&#39;&lt;script type=&quot;text/x-mathjax-config&quot;&gt;MathJax.Hub.Config({&quot;HTML-CSS&quot;:{imageFont:null}});&lt;\/script&gt;&lt;script src=&quot;libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;\/script&gt;&#39;)
+&lt;/script&gt;
 </code></pre>
 
-<h3>Author</h3>
+<h4>Structure</h4>
 
-<p>This step will create a new directory <code>mydeck</code> and add the necessary scaffolding. If you have <code>git</code> installed, it will initialize it as a <code>git</code> repo, checkout its <code>gh-pages</code> branch, add and commit everything. Finally, it will open <code>index.Rmd</code> for you to edit.</p>
+<p>A widget needs to follow some conventions with regard to its folder structure.</p>
 
-<pre><code>author(&quot;mydeck&quot;)
+<ol>
+<li><p>By default, Slidify looks for assets in two folders named <code>css</code> and <code>js</code>. All css files are included in the head of the document, while all javascripts are loaded after the body tag.</p></li>
+<li><p>If you have different names for your asset folders, or want more control over what assets are included, and where in the document, you can include a <code>config.yml</code> file. </p></li>
+</ol>
+
+<p>Let us take the example of the widget <code>scianimator</code>. The default behavior was not desired in this case, for two reasons:</p>
+
+<ul>
+<li><p>The css folder consists of multiple stylesheets, of which only the base stylesheet and one of the themes needs to be included. </p></li>
+<li><p>The js folder consists of multiple javascripts, of which only one needs to be included. Moreover, for the animations to be displayed correctly, the script should be included in the head of the document. </p></li>
+</ul>
+
+<p>The <code>config.yml</code> file below provides the desired control, by clearly specifying which assets to include. The <code>jshead</code> key specifies javascript assets that need to be included in the head of the document. Note that all asset paths are specified relative to the widget folder.</p>
+
+<pre><code>scianimator:
+  jshead: js/jquery.scianimator.pack.js
+  css: [css/scianimator.css, css/scianimator.light.css]
 </code></pre>
 
-<p>Edit the YAML front matter (if you don&#39;t know what it is, just replace everything to the right of the <code>:</code> in the lines between the <code>---</code> right at the top). Edit the deck, making sure to separate your slides by a blank line followed by three dashes <code>---</code>. </p>
+<h2>More</h2>
 
-<h3>Slidify</h3>
+<p>A widget can also contain an html file of the same name, which gets included inline after the body tag. For example, the disqus widget contains the following html. The widget can be positioned on a page using <code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code></p>
 
-<p>This step generates a html slide deck from <code>index.Rmd</code>. It is a static file, which means that you can open it in your browser locally and it should display fine.</p>
-
-<pre><code>slidify(&quot;index.Rmd&quot;)
-</code></pre>
-
-<h3>Publish</h3>
-
-<p>Now is the magical step of publishing your deck to <code>github</code>. Login with your github account and <a href="https://help.github.com/articles/creating-a-new-repository">create a new repository</a>. Note that Github will prompt you to add a README file, but just use the defaults so that your repo is empty. You will need to have <code>git</code> installed on your computer and be able to push to <code>github</code> using <a href="https://help.github.com/articles/generating-ssh-keys">SSH</a></p>
-
-<pre><code># replace USER and REPO with your username and reponame
-publish(user = &quot;USER&quot;, repo = &quot;REPO&quot;, host = &#39;github&#39;)
+<pre><code class="html">&lt;script&gt;
+var disqus_developer = 1;
+  var disqus_shortname = &#39;&#39;;
+  /* * * DON&#39;T EDIT BELOW THIS LINE * * */
+  (function() {
+     var dsq = document.createElement(&#39;script&#39;); 
+     dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+     dsq.src = &#39;http://&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+     (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName  (&#39;body&#39;)[0]).appendChild(dsq);
+    })();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;
+ comments powered by Disqus.&lt;/a&gt;
+&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
 </code></pre>
 
     </div>

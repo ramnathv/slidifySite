@@ -6,6 +6,15 @@ highlighter: prettify
 hitheme: twitter-bootstrap
 prettify:
   linenums: false
+--- &jumbotron
+
+*** .col-md-12
+
+# Frameworks
+
+.lead This is a framework
+
+
 --- &brow #features
 
 *** .col-md-3
@@ -16,8 +25,9 @@ prettify:
 
 ## Slides
 
-Slides are authored in markdown and delimited by an empty newline followed by three dashes. Shown below is an example of a typical slide
-
+Slides are authored in markdown and delimited by an empty newline followed by three dashes.
+    
+    
     ---
   	## Slide Title
   	
@@ -28,6 +38,12 @@ Slides are authored in markdown and delimited by an empty newline followed by th
   	- Point 1
   	- Point 2
   	- Point 3
+    
+<div class='alert alert-danger'>
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<i class='icon-key'> </i>
+An empty newline is necessary before the dashes, so that Slidify does not confuse dashes used to mark headers and tables in markdown as slide separators.
+</div>
 		
 		
 #### Slide Properties	
@@ -50,6 +66,18 @@ The slide properties need to be valid YAML, and you can check if it is the case 
 
   	props <- "{id: myslide, class: [bigger, red]}"
   	yaml::yaml.load(props)
+    
+We can then add `css` externally or inline that would style this slide as required
+
+    slide.bigger {
+  	  font-size: 1.5em;
+  	}
+  	
+  	slide.red {
+  	  color: red;
+  	}
+    
+##### Alternate Specification
 		
 Slidify also allows an alternate format for specifying slide properties, that uses space separated key-value pairs with symbolic shortcuts. So, the above set of properties can also be written as
 
@@ -62,19 +90,12 @@ The symbolic shortcuts currently available include
   	& template
   	= name
 	
+<div class='alert alert-danger'>
 NOTE: Do not mix the two formats of specifying properties, as it won't work. For example, the following slide properties will throw an error
+</div>
 
-  	--- {#myslide, class: [bigger, red]}
+     --- {#myslide, class: [bigger, red]}
 		
-We can then add `css` externally or inline that would style this slide as required
-
-  	slide.bigger {
-  	  font-size: 1.5em;
-  	}
-  	
-  	slide.red {
-  	  color: red;
-  	}
 		
 #### Customizing Fonts
 

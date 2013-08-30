@@ -94,47 +94,32 @@
             </a>
         </li>
           <li class="">
-            <a href="about" >
+            <a href="create.html" >
               <i class="icon-pencil"> </i>
-              Author 
+              Create 
             </a>
         </li>
           <li class="dropdown">
             <a href="style" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="icon-hand-right"> </i>
-              Style <b class="caret"></b>
+              <i class="icon-gift"> </i>
+              Customize <b class="caret"></b>
             </a>
           <ul class="dropdown-menu">
-            <li><a href="samples/intro">
-               <i class="icon-hand-right"> </i> io2012
+            <li><a href="frameworks.html">
+               <i class="icon-"> </i> Frameworks
              </a></li>
-            <li><a href="samples/deck.js">
-               <i class="icon-hand-right"> </i> deck.js
+            <li><a href="widgets.html">
+               <i class="icon-"> </i> Widgets
              </a></li>
-            <li><a href="samples/shower">
-               <i class="icon-hand-right"> </i> shower
-             </a></li>
-            <li><a href="samples/landslide">
-               <i class="icon-hand-right"> </i> landslide
+            <li><a href="layouts.html">
+               <i class="icon-"> </i> Layouts
              </a></li>
           </ul>
         </li>
           <li class="">
-            <a href="customize" >
+            <a href="share.html" >
               <i class="icon-gift"> </i>
-              Customize 
-            </a>
-        </li>
-          <li class="">
-            <a href="extend" >
-              <i class="icon-cogs"> </i>
-              Extend 
-            </a>
-        </li>
-          <li class="">
-            <a href="publish" >
-              <i class="icon-github"> </i>
-              Publish 
+              Share 
             </a>
         </li>
       </ul>
@@ -142,7 +127,23 @@
       </div>
     </div>
     
-    <div class="container " id='features'>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="">
+        
+      </div>
+      <div class="col-md-12">
+        <h1>Frameworks</h1>
+
+<p class='lead'>This is a framework</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container " id='features'>
   <div class="row">
     <div class="col-md-3">
       <h2>Sidebar</h2>
@@ -151,7 +152,7 @@
     <div class="col-md-7">
       <h2>Slides</h2>
 
-<p>Slides are authored in markdown and delimited by an empty newline followed by three dashes. Shown below is an example of a typical slide</p>
+<p>Slides are authored in markdown and delimited by an empty newline followed by three dashes.</p>
 
 <pre><code>---
 ## Slide Title
@@ -164,6 +165,13 @@ Some points to make
 - Point 2
 - Point 3
 </code></pre>
+
+<div class='alert alert-danger'>
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<i class='icon-key'> </i>
+An empty newline is necessary before the dashes, so that Slidify does not confuse dashes used to mark headers and tables in markdown as slide separators.
+</div>
+        
 
 <h4>Slide Properties</h4>
 
@@ -187,6 +195,19 @@ Some points to make
 yaml::yaml.load(props)
 </code></pre>
 
+<p>We can then add <code>css</code> externally or inline that would style this slide as required</p>
+
+<pre><code>slide.bigger {
+  font-size: 1.5em;
+}
+
+slide.red {
+  color: red;
+}
+</code></pre>
+
+<h5>Alternate Specification</h5>
+
 <p>Slidify also allows an alternate format for specifying slide properties, that uses space separated key-value pairs with symbolic shortcuts. So, the above set of properties can also be written as</p>
 
 <pre><code>--- #myslide .bigger .red
@@ -200,20 +221,11 @@ yaml::yaml.load(props)
 = name
 </code></pre>
 
-<p>NOTE: Do not mix the two formats of specifying properties, as it won&#39;t work. For example, the following slide properties will throw an error</p>
+<div class='alert alert-danger'>
+NOTE: Do not mix the two formats of specifying properties, as it won't work. For example, the following slide properties will throw an error
+</div>
 
-<pre><code>--- {#myslide, class: [bigger, red]}
-</code></pre>
-
-<p>We can then add <code>css</code> externally or inline that would style this slide as required</p>
-
-<pre><code>slide.bigger {
-  font-size: 1.5em;
-}
-
-slide.red {
-  color: red;
-}
+<pre><code> --- {#myslide, class: [bigger, red]}
 </code></pre>
 
 <h4>Customizing Fonts</h4>

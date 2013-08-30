@@ -1,44 +1,20 @@
 ---
-title: Gallery
+title: Frameworks
 framework: bootstrap3
 mode: selfcontained
 highlighter: prettify
 hitheme: twitter-bootstrap
 prettify:
   linenums: false
-assets:
-  jshead: ["http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", "http://jmblog.github.io/color-themes-for-google-code-prettify/js/jquery.isotope.min.js"]
---- &brow
+--- &jumbotron
 
-*** .col-md-12
+*** .col-md-8
 
-<ul id="filter" class="filter list-inline">
-  <li class="active"><a href='#' data-filter="*">
-    <span class='badge'>All Themes</span>
-  </a></li>
-  <li><a href="#" data-filter=".dark">
-    <span class='badge'>Dark</span>
-  </a></li>
-  <li><a href="#" data-filter=".light">
-    <span class='badge'>Light</span>
-  </a></li>
-</ul>
+# Frameworks
 
-<script>
-// cache container
-var $container = $('#gallery > .row');
-// initialize isotope
-$container.isotope({
- 
-});
+.lead A `framework` is a collection of `stylesheets`, `javascripts` and `layouts` that control the style and appearance of an HTML5 document.
 
-// filter items when filter link is clicked
-$('#filters a').click(function(){
-  var selector = $(this).attr('data-filter');
-  $container.isotope({ filter: selector });
-  return false;
-});
-</script>
+
 
 --- &brow #gallery
 
@@ -99,7 +75,7 @@ $('#filters a').click(function(){
 
 <style>
 body {
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 #gallery .col-md-3 {
   padding-right:20px; 

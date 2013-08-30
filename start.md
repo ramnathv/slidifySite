@@ -1,11 +1,19 @@
 ---
-title: Tutorials
+title: Start
 framework: bootstrap3
 mode: selfcontained
 highlighter: prettify
 hitheme: twitter-bootstrap
 prettify:
   linenums: false
+--- &jumbotron
+
+*** .col-md-8
+
+# Slidify
+
+.lead Slidify is an R package that helps create, customize and share, elegant, dynamic and interactive HTML5 documents using R Markdown.
+
 --- &brow #features
 
 *** .col-md-3
@@ -24,7 +32,7 @@ prettify:
 
 <style>
 body {
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 ol.linenums {
   margin-left: 0px;
@@ -42,18 +50,19 @@ ol.linenums {
 
 
 <div class='alert alert-success'>
+<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
  You can install Slidify, write a three page slide deck and publish it to Github,  all in less than 5 minutes!
 </div>
 
 
 ### Install
 
-Slidify is not on CRAN as yet and needs to be installed from `github`. You can use Hadley's `devtools` package to accomplish this easily. You will also need `slidifyLibraries` which contains all external libraries required by Slidify.
+Slidify is not on CRAN as yet and needs to be installed from `github`. You can use Hadley's `devtools` package to accomplish this easily. You will also need `slidifyLibraries` which contains all external libraries required by Slidify. We will work with the `dev` branch of the libraries which contains all the latest magic.
 
 ```
 library(devtools)
-install_github('slidify', 'ramnathv')
-install_github('slidifyLibraries', 'ramnathv')
+install_github('slidify', 'ramnathv', ref = "dev")
+install_github('slidifyLibraries', 'ramnathv', ref = "dev")
 ```
 
 ### Author

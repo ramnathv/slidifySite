@@ -12,15 +12,13 @@ favicon: slidify_logo
 navbar:
     - {item: Home, href: 'index.html', icon: home}
     - {item: "Start", href: 'start.html', class: active, icon: signin}
-    - {item: Author, href: about, icon: pencil}
-    - {item: Style, href: style, icon: hand-right, class: dropdown, 
+    - {item: Create, href: 'create.html', icon: pencil}
+    - {item: Customize, href: style, icon: gift, class: dropdown, 
         dropdown: true, menu: [
-         {item: io2012, href: 'samples/intro'},
-         {item: deck.js, href: 'samples/deck.js'},
-         {item: shower, href: 'samples/shower'},
-         {item: landslide, href: 'samples/landslide'}
+         {item: Frameworks, href: 'frameworks.html', icon: ""},
+         {item: Widgets, href: 'widgets.html', icon: ""},
+         {item: Layouts, href: 'layouts.html', icon: ""},
         ]
       }
-    - {item: Customize, href: customize, icon: gift}
-    - {item: Extend, href: extend, icon: cogs}
-    - {item: Publish, href: publish,  icon: github}
+    - {item: Share, href: "share.html", icon: gift}
+github: {user: ramnath, repo: slidify}

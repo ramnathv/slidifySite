@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    <title>Slidify</title>
+    <title>Frameworks</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -13,7 +13,7 @@
     <link href="libraries/frameworks/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
     
     <!-- Syntax Highlighter CSS -->
-    <link href="libraries/highlighters/highlight.js/css/solarized_light.css" rel="stylesheet">
+    <link href="libraries/highlighters/prettify/css/twitter-bootstrap.css" rel="stylesheet">
     
     <!-- Extra CSS: Fonts -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
@@ -131,62 +131,62 @@
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <style>
-.jumbotron pre {
-  border: 1px;
-  background-color: transparent;
-  font-size: 18px;
-  margin-left: -20px;
-}
-</style>
-
-<iframe width="500" height="340" src="http://www.youtube.com/embed/I95GOmLc7TA" frameborder="0" allowfullscreen></iframe>
-
+      <div class="">
+        
       </div>
-      <div class="col-md-6">
-        <h1>Slidify</h1>
+      <div class="col-md-8">
+        <h1>Frameworks</h1>
 
-<p>Interactive Documents from Markdown</p>
-
-<p><a class='btn btn-success btn-lg' href="#">Learn More</a></p>
-
-<pre><code class="r">devtools::source_gist(&quot;c5bc8ea8e250a6bd039d&quot;)
-library(slidify)
-author(&quot;newdeck&quot;)
-slidify(&quot;index.Rmd&quot;)
-publish(repo = &quot;newdeck&quot;, user = &quot;ramnathv&quot;)
-</code></pre>
+<p class='lead'>A <code>framework</code> is a collection of <code>stylesheets</code>, <code>javascripts</code> and <code>layouts</code> that control the style and appearance of an HTML5 document.</p>
 
       </div>
     </div>
   </div>
 </div>
-<div class="container " id='features'>
+<div class="container " id='slide-2'>
   <div class="row">
-    <div class="col-md-4">
-      <h2><i class="icon-pencil"> </i>Create</h2>
+    <div class="col-md-3">
+      <div class="thumbnail">
+         <h4>Google IO2012</h4>
 
-<p>Write content in <code>R Markdown</code>, mixing <code>markdown</code> text with <code>knitr</code> code chunks, and render it as an interactive web-ready HTML5 document.</p>
+<p><img src="http://www.clipular.com/c?14750014=BYKY6f65GF_csyUGqL8Hpg26MgY&amp;f=.png" alt="io2012"></p>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<p><a href="http://ramnathv.github.com/slidifyExamples/examples/io2012">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/io2012">Code</a></p>
 
+      </div>
     </div>
-    <div class="col-md-4">
-      <h2><i class="icon-hand-right"> </i>Customize</h2>
+    <div class="col-md-3">
+      <div class="thumbnail">
+         <h4>Google IO2012</h4>
 
-<p>Style your document using <code>frameworks</code>. Structure display using <code>layouts</code>. Extend functionality using <code>widgets</code></p>
+<p><img src="http://www.clipular.com/c?14750014=BYKY6f65GF_csyUGqL8Hpg26MgY&amp;f=.png" alt="io2012"></p>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<p><a href="http://ramnathv.github.com/slidifyExamples/examples/io2012">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/io2012">Code</a></p>
 
+      </div>
     </div>
-    <div class="col-md-4">
-      <h2><i class="icon-gift"> </i>Share</h2>
+    <div class="col-md-3">
+      <div class="thumbnail">
+         <h4>Google IO2012</h4>
 
-<p>Publish your interactive document to <code>RPubs</code> with a single click, or to <code>github</code> and <code>dropbox</code> with a few lines of code.</p>
+<p><img src="http://www.clipular.com/c?14750014=BYKY6f65GF_csyUGqL8Hpg26MgY&amp;f=.png" alt="io2012"></p>
 
-<p><a class='btn btn-primary' href="#">View Details</a></p>
+<p><a href="http://ramnathv.github.com/slidifyExamples/examples/io2012">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/io2012">Code</a></p>
 
+<style>
+body {
+  /* margin-top: 40px; */
+}
+#gallery .col-md-3 {
+  padding-right:20px; 
+  border-right: 1px dotted #ccc;
+}
+.thumbnail {
+  border: none;
+}
+</style>
+
+      </div>
     </div>
   </div>
 </div>
@@ -205,9 +205,15 @@ publish(repo = &quot;newdeck&quot;, user = &quot;ramnathv&quot;)
 
     
 
-    <!-- LOAD HIGHLIGHTER JS FILES -->
-    <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <!-- DONE LOADING HIGHLIGHTER JS FILES -->
-     
+    <!-- Google Prettify -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+    <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+    <script>
+      var pres = document.getElementsByTagName("pre");
+      for (var i=0; i < pres.length; ++i) {
+        pres[i].className = "prettyprint ";
+      }
+      prettyPrint();
+    </script>
+    <!-- End Google Prettify --> 
     </html>
