@@ -31,6 +31,7 @@
          
     <!-- Custom styles for this template -->
     <link href="libraries/frameworks/bootstrap3/assets/css/jumbotron.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
     
 
@@ -68,26 +69,26 @@
   
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Slidify</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li class="">
+    <div class='wrap'>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Slidify</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
             <a href="index.html" >
               <i class="icon-home"> </i>
               Home 
             </a>
         </li>
-          <li class="active">
+          <li class="">
             <a href="start.html" >
               <i class="icon-signin"> </i>
               Start 
@@ -101,7 +102,7 @@
         </li>
           <li class="dropdown">
             <a href="style" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="icon-gift"> </i>
+              <i class="icon-hand-right"> </i>
               Customize <b class="caret"></b>
             </a>
           <ul class="dropdown-menu">
@@ -122,12 +123,29 @@
               Share 
             </a>
         </li>
+          <li class="dropdown">
+            <a href="tutorials/index.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-gallery"> </i>
+              Tutorials <b class="caret"></b>
+            </a>
+          <ul class="dropdown-menu">
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 1
+             </a></li>
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 2
+             </a></li>
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 3
+             </a></li>
+          </ul>
+        </li>
       </ul>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+      
+      <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
     <div class="row">
@@ -198,6 +216,36 @@
   </div>
 </div>
 
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14554322=8U5lBzK3xOryiqHSnM2Qo87WBys&f=.png" alt="...">
+  <div class="caption">
+    <h4>Showoff</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/showoff">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/showoff">Code</a>
+  </div>
+</div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14818228=CAKzrVUzugEL33hFpNpvrvIU-H4&f=.png" alt="...">
+  <div class="caption">
+    <h4>Google HTML5</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/html5slides">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/html5slides">Code</a>
+  </div>
+</div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14599308=IRLP3bhlWjnw6FM47u-PvDpGxHk&f=.png" alt="...">
+  <div class="caption">
+    <h4>Slideous</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/slideous/">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/slideous">Code</a>
+  </div>
+</div>
+
 <style>
 body {
   /* margin-top: 40px; */
@@ -215,7 +263,13 @@ body {
   </div>
 </div>
 
-    
+    </div>
+   
+     <div id='footer'>
+        <div class='container'>
+          <p style='padding-top:20px;'>Built with <a href="http://github.com/ramnathv/slidify">Slidify</a>. Styled using <a href="http://getbootstrap.com">Bootstrap3</a>. Hosted on <a href="http://www.github.com">GitHub</a>. Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Inspired by <a href='http://www.ruhoh.com'>Ruhoh.</a> Colors based on <a href="http://ethanschoonover.com/solarized">Solarized</a></p> 
+      </div>
+    </div>    
   </body>
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->

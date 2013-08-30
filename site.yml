@@ -10,15 +10,22 @@ navbar2:
 title: Slidify
 favicon: slidify_logo
 navbar:
-    - {item: Home, href: 'index.html', icon: home}
-    - {item: "Start", href: 'start.html', class: active, icon: signin}
+    - {item: Home, href: 'index.html', icon: home, class: active}
+    - {item: "Start", href: 'start.html', icon: signin}
     - {item: Create, href: 'create.html', icon: pencil}
-    - {item: Customize, href: style, icon: gift, class: dropdown, 
+    - {item: Customize, href: style, icon: "hand-right", class: dropdown, 
         dropdown: true, menu: [
          {item: Frameworks, href: 'frameworks.html', icon: ""},
          {item: Widgets, href: 'widgets.html', icon: ""},
-         {item: Layouts, href: 'layouts.html', icon: ""},
+         {item: Layouts, href: 'layouts.html', icon: ""}
         ]
       }
     - {item: Share, href: "share.html", icon: gift}
+    - {item: Tutorials, href: "tutorials/index.html", icon: "gallery", class: dropdown, 
+        dropdown: true, menu: [
+         {item: "Tutorial 1", href: 'tutorials/index.html', icon: ""},
+         {item: "Tutorial 2", href: 'tutorials/index.html', icon: ""},
+         {item: "Tutorial 3", href: 'tutorials/index.html', icon: ""}
+        ]
+      }
 github: {user: ramnath, repo: slidify}

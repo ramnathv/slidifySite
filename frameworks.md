@@ -1,6 +1,7 @@
 ---
 title: Frameworks
 framework: bootstrap3
+layout: home
 mode: selfcontained
 highlighter: prettify
 hitheme: twitter-bootstrap
@@ -69,6 +70,42 @@ prettify:
     <a href="http://ramnathv.github.com/slidifyExamples/examples/io2012">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/io2012">Code</a>
   </div>
 </div>
+
+*** .col-md-3
+
+<div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14554322=8U5lBzK3xOryiqHSnM2Qo87WBys&f=.png" alt="...">
+  <div class="caption">
+    <h4>Showoff</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/showoff">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/showoff">Code</a>
+  </div>
+</div>
+
+*** .col-md-3
+
+<div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14818228=CAKzrVUzugEL33hFpNpvrvIU-H4&f=.png" alt="...">
+  <div class="caption">
+    <h4>Google HTML5</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/html5slides">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/html5slides">Code</a>
+  </div>
+</div>
+
+*** .col-md-3
+
+
+<div class="thumbnail dark">
+  <img src="http://www.clipular.com/c?14599308=IRLP3bhlWjnw6FM47u-PvDpGxHk&f=.png" alt="...">
+  <div class="caption">
+    <h4>Slideous</h4>
+    <a href="http://ramnathv.github.io/slidifyExamples/examples/slideous/">Deck</a> | <a href="https://github.com/ramnathv/slidifyExamples/tree/gh-pages/examples/slideous">Code</a>
+  </div>
+</div>
+
+
+
+
+
 
 
 

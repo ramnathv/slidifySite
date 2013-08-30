@@ -1,6 +1,7 @@
 ---
 title: Slidify
 framework: bootstrap3
+layout: home
 mode: selfcontained
 hitheme: solarized_light
 --- &jumbotron .col-md-6
@@ -11,9 +12,6 @@ hitheme: solarized_light
   background-color: transparent;
   font-size: 18px;
   margin-left: -20px;
-}
-.jumbotron {
-  padding-bottom: 0px;
 }
 </style>
 
@@ -71,13 +69,3 @@ Publish your interactive document to `RPubs` with a single click, or to `github`
   allowtransparency="true" frameborder="0" scrolling="0" width="250px" height="30px"></iframe>
   </span>
 </section>
-
----
-
-<div id='footer'>
-  <div class='container'>
-    <p>Built by <a href="http://github.com/ramnathv/slidify">Slidify</a>. Styled with <a href="http://twitter.github.com/bootstrap">Bootstrap</a>. Hosted on <a href="http://www.github.com">GitHub</a>. Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Inspired by <a href='http://www.ruhoh.com'>Ruhoh</a></p> 
-  </div>
-</div>
- 
-

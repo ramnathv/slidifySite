@@ -31,6 +31,7 @@
          
     <!-- Custom styles for this template -->
     <link href="libraries/frameworks/bootstrap3/assets/css/jumbotron.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
     
 
@@ -68,26 +69,26 @@
   
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Slidify</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li class="">
+    <div class='wrap'>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Slidify</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
             <a href="index.html" >
               <i class="icon-home"> </i>
               Home 
             </a>
         </li>
-          <li class="active">
+          <li class="">
             <a href="start.html" >
               <i class="icon-signin"> </i>
               Start 
@@ -101,7 +102,7 @@
         </li>
           <li class="dropdown">
             <a href="style" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="icon-gift"> </i>
+              <i class="icon-hand-right"> </i>
               Customize <b class="caret"></b>
             </a>
           <ul class="dropdown-menu">
@@ -122,12 +123,29 @@
               Share 
             </a>
         </li>
+          <li class="dropdown">
+            <a href="tutorials/index.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-gallery"> </i>
+              Tutorials <b class="caret"></b>
+            </a>
+          <ul class="dropdown-menu">
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 1
+             </a></li>
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 2
+             </a></li>
+            <li><a href="tutorials/index.html">
+               <i class="icon-"> </i> Tutorial 3
+             </a></li>
+          </ul>
+        </li>
       </ul>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+      
+      <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
     <div class="row">
@@ -143,8 +161,134 @@
     </div>
   </div>
 </div>
+<div class="container " id='features'>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Sidebar</h2>
 
-    
+    </div>
+    <div class="col-md-7">
+      <h2>Slides</h2>
+
+<p>Slides are authored in markdown and delimited by an empty newline followed by three dashes.</p>
+
+<pre><code>---
+## Slide Title
+
+This is a typical slide. You can use __markdown__ to write content.
+
+Some points to make
+
+- Point 1
+- Point 2
+- Point 3
+</code></pre>
+
+<div class='alert alert-danger'>
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<i class='icon-key'> </i>
+An empty newline is necessary before the dashes, so that Slidify does not confuse dashes used to mark headers and tables in markdown as slide separators.
+</div>
+        
+
+<h4>Slide Properties</h4>
+
+<p>Many a time, you want to style some slides differently. One way to achieve this is using slide properties, which can be added inline after the slide delimiter. For example, if you want to add an id to a slide and also slide classes, which you can then style using <code>css</code>, here is how you can do it.</p>
+
+<pre><code>--- {id: myslide, class: [bigger, red]}
+## Slide Title
+
+This is a typical slide. You can use __markdown__ to write content.
+
+Some points to make
+
+- Point 1
+- Point 2
+- Point 3   
+</code></pre>
+
+<p>The slide properties need to be valid YAML, and you can check if it is the case by running the following in your R console</p>
+
+<pre><code>props &lt;- &quot;{id: myslide, class: [bigger, red]}&quot;
+yaml::yaml.load(props)
+</code></pre>
+
+<p>We can then add <code>css</code> externally or inline that would style this slide as required</p>
+
+<pre><code>slide.bigger {
+  font-size: 1.5em;
+}
+
+slide.red {
+  color: red;
+}
+</code></pre>
+
+<h5>Alternate Specification</h5>
+
+<p>Slidify also allows an alternate format for specifying slide properties, that uses space separated key-value pairs with symbolic shortcuts. So, the above set of properties can also be written as</p>
+
+<pre><code>--- #myslide .bigger .red
+</code></pre>
+
+<p>The symbolic shortcuts currently available include</p>
+
+<pre><code># id
+. class
+&amp; template
+= name
+</code></pre>
+
+<div class='alert alert-danger'>
+NOTE: Do not mix the two formats of specifying properties, as it won't work. For example, the following slide properties will throw an error
+</div>
+
+<pre><code> --- {#myslide, class: [bigger, red]}
+</code></pre>
+
+<h4>Customizing Fonts</h4>
+
+<p>It is easy to use custom fonts with Slidify. For example, suppose you wish to use the <code>Droid Sans</code> webfont from Google. You can accomplish your task in two steps.</p>
+
+<p>First, you need to include a link to the font in the YAML front matter at the top of your Rmd document.</p>
+
+<pre><code>---
+assets:
+  css: http://fonts.googleapis.com/css?family=Droid+Sans
+---
+</code></pre>
+
+<p>Second, you need to add CSS that would apply this font to the text. You can either include the CSS inline, or add it to an external css file, and link it in the YAML front matter.</p>
+
+<pre><code>p {
+  font-family: &quot;Droid Sans&quot; !important
+}
+</code></pre>
+
+<p>Note that we are adding the <code>!important</code> tag to the CSS declaration so that it overrules all other rules that have been defined for <code>p</code> tags. If you are working with a specific Slidify framework, you can also achieve this by writing targetted CSS directives. For example, if you are using the default framework <code>io2012</code>, you can target the text elements on the slide as</p>
+
+<pre><code>slide &gt; article p, ul, ol {
+  font-family: &quot;Droid Sans&quot;
+}
+</code></pre>
+
+<p>This CSS rule targets <code>p/ul/ol</code> text elements nested inside an <code>article</code> tag which in turn is a direct descendant of a <code>slide</code> tag. Knowing the hierarcy helps you write efficient CSS.</p>
+
+<p>Note that using webfonts ensures that they are available wherever the document is displayed online. However, to ensure offline availability as well, you need to download the fonts and use an <code>@font-face</code> kit to use them. </p>
+
+<!-- Add Links on Font Face Kits --> 
+
+    </div>
+  </div>
+</div>
+
+    </div>
+   
+     <div id='footer'>
+        <div class='container'>
+          <p style='padding-top:20px;'>Built with <a href="http://github.com/ramnathv/slidify">Slidify</a>. Styled using <a href="http://getbootstrap.com">Bootstrap3</a>. Hosted on <a href="http://www.github.com">GitHub</a>. Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Inspired by <a href='http://www.ruhoh.com'>Ruhoh.</a> Colors based on <a href="http://ethanschoonover.com/solarized">Solarized</a></p> 
+      </div>
+    </div>    
   </body>
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
